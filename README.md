@@ -1,127 +1,89 @@
-Ventas
+# Sales
 
-A Python-based tool for processing and analyzing sales and cost data from Excel files. This application helps you clean, map, and compute various metrics (such as unit and total costs, margins, and quantities) based on multiple document types (e.g., electronic invoices, credit notes, export invoices, etc.). It leverages a graphical interface to allow users to select input files and define starting rows and filters for processing the data.
+A Python tool to process and analyze sales data from Excel files.  
+This project uses **pandas** for data manipulation, **openpyxl** for working with Excel, and **tkinter** for a graphical interface that facilitates file selection and parameter configuration.
 
-Features
+## Description
 
-Data Cleaning:
-Cleans and formats columns (e.g., SKU codes) for consistent processing.
+The main script, `ventas3.py`, implements several functions that allow you to:
 
-Cost Calculation:
-Computes unit and total costs by grouping data by SKU, with special handling for document types (e.g., making certain costs negative for credit notes or electronic receipts).
+- **Extract and Clean Data:**  
+  Functions such as `limpiar_filas` and `obtener_tipo_y_numero` handle formatting and extracting relevant information from DataFrame columns.
 
-Dynamic Mapping:
-Creates mapping dictionaries to link SKUs with their corresponding cost values from different data sources.
+- **Cost Calculation and Assignment:**  
+  It calculates total and unit costs (using functions like `calcular_costos_totales`, `Costos_negativos`, and `asignar_costos`) for sales documents and credit notes.
 
-Flexible Filtering:
-Supports filtering data with customizable conditions and creating pivot tables for further analysis.
+- **Dynamic Table Generation and Filtering:**  
+  With the `filtrar_y_crear_tabla_dinamica` function, pivot tables are created to summarize information, while other functions allow dynamic filtering based on conditions.
 
-User-Friendly Interface:
-Uses Tkinter to provide file dialogs for selecting Excel files and to input parameters like starting row numbers and filters.
+- **Graphical User Interface (GUI):**  
+  Utilizes **tkinter** to enable the user to select sales, cost, and annual data files, enter the starting row for data reading, and configure filters for generating pivot tables.
 
+The script reads, processes, and transforms the data to subsequently assign costs and generate summaries that facilitate the analysis of sales information.
 
-Requirements
+## Requirements
 
-Python: 3.8 or later
+- **Python 3.7+** (it is recommended to use a virtual environment)  
+- **Libraries:**
+  - [pandas](https://pandas.pydata.org/)
+  - [openpyxl](https://openpyxl.readthedocs.io/)
+  - **tkinter** (included with most Python installations)  
+- Other standard modules such as `re`, `os`, and `importlib`.
 
-Libraries:
+## Installation
 
-pandas
+1. **Clone the repository:**
 
-openpyxl
-
-Tkinter (usually included with standard Python installations)
-
-
-
-Additional packages may be required for HTML table parsing (such as lxml or BeautifulSoup4) if your costs file is in HTML format.
-
-Installation
-
-1. Clone the repository:
-
-git clone https://github.com/Sebastian2nunez/Ventas.git
-cd Ventas
-
-
-2. Create and activate a virtual environment (optional but recommended):
+   ```bash
+   git clone https://github.com/Sebastian2nunez/Ventas.git
+   cd Ventas
+Create a virtual environment (optional but recommended):
 
 python -m venv venv
-source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+source venv/bin/activate  # On Linux/Mac
+venv\Scripts\activate     # On Windows
 
-
-3. Install the required dependencies:
-
-pip install pandas openpyxl
-
-If you need HTML parsing support, you might also install:
-
-pip install lxml beautifulsoup4
-
-
-
-Usage
-
-1. Run the application:
-
+# Usage
 python ventas3.py
+A graphical window will open allowing you to:
 
+Select the sales file (Excel format).
+Select the costs file (Excel or HTML format, as per the code).
+Select the annual file (optional).
+Enter the starting row number for data reading.
+Configure filters for generating pivot tables.
+The script will perform the following operations:
 
-2. Select the input files:
+Read and preprocess the files.
+Clean columns and format data.
+Calculate unit and total net costs, adjusting values based on document types (e.g., converting certain values to negative for receipts and credit notes).
+Create summaries and pivot tables to facilitate data analysis.
+Project Structure
+ventas3.py: Main script containing all functions for data manipulation, analysis, and visualization.
+README.md: This documentation file.
+Key Features
+Data Processing:
+Cleaning, conversion, and formatting of key columns (such as SKU and costs).
 
-A sales file (Excel format, e.g., .xlsx)
+Advanced Calculations:
+Calculation of total cost per SKU, assignment of unit and total costs, and margin calculation.
 
-A costs file (Excel or HTML format; note that HTML files are processed using pd.read_html)
+Graphical User Interface (GUI):
+Use of tkinter for an interactive user experience in file selection and parameter configuration.
 
-An annual file (if available)
-
-
-
-3. Configure the parameters:
-
-Specify the starting row for reading the sales and annual files.
-
-Optionally set filters for pivot table creation.
-
-The GUI will provide prompts and messages for any errors or necessary input.
-
-
-
-4. Execute the processing:
-
-Once all files and parameters are set, click on the button to execute the program.
-
-The tool will read, process, and calculate the required metrics (like “Costo Neto Unitario”, “Costo Total Neto”, “Total venta”, etc.), handling various document types appropriately.
-
-
-
-5. Output:
-
-Processed data can be further manipulated or saved into new Excel files, depending on how you integrate additional logic within the script.
-
-
-
-
-Customization
-
-Functions Overview:
-The script is modular, with functions dedicated to:
-
-Cleaning DataFrames (limpiar_filas)
-
-Calculating totals (calcular_costos_totales)
-
-Mapping SKUs to cost values (crear_diccionarios_mapeo)
-
-Filtering and creating pivot tables (filtrar_y_crear_tabla_dinamica)
-
-
-Feel free to modify or extend these functions to suit your specific data processing needs.
-
-GUI Enhancements:
-The current version uses Tkinter for basic file selection and parameter entry. You can expand the GUI for a more robust user experience if required.
-
+Flexibility:
+Allows dynamic filtering for pivot table creation and analysis of various document types (receipts, credit notes, invoices, etc.).
 
 Contributing
+If you wish to contribute to this project:
 
-Contributions are welcome! If you have suggestions, improvements, or bug fixes, please feel free to fork the repository and submit a pull request.
+Fork the repository.
+Create a branch for your new feature or bug fix.
+Make your changes and submit a pull request.
+Any contribution is welcome!
+
+License
+[Specify the license here, e.g., MIT License]
+
+Contact
+For inquiries, suggestions, or reporting bugs, please contact through the GitHub repository or send an email to your contact address.
