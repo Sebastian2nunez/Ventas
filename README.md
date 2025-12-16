@@ -1,50 +1,25 @@
-# Ventas (Bsale) — Sales ETL & Automated Excel Reporting
+# Ventas (Bsale) — Sales ETL & Excel Reporting (Python)
 
-A Python project that automates **sales data processing and reporting** using exports from **Bsale**.  
-It cleans and standardizes raw transaction files, optionally merges product data (e.g., **SKU + cost**), computes key metrics (sales, cost, margin), and produces an **Excel report** with business-ready summaries.
+Python pipeline to process **Bsale sales exports**, enrich them with product information (e.g., **SKU + cost**), compute key sales metrics (sales, cost, margin), and generate an **Excel report** with business-ready summaries.
 
----
-
-## What this project does
-
-Many sales reports end up as manual Excel work spread across multiple files. This project aims to make the workflow:
-
-- **Reproducible** (same inputs → same report)
-- **Automated** (minimal manual steps)
-- **Scalable** (works as sales volume grows)
+> Note: This repository is intended for a public portfolio. No personal identifiers (e.g., RUT, full names, emails, phone numbers) should be included in the data.
 
 ---
 
-## Key features
+## What you get
 
-- Load and normalize Bsale exports (sales documents such as invoices/receipts/credit notes — depending on your setup)
-- Merge transactions with a product master table using **SKU**
-- Compute business KPIs:
+- Cleaned and standardized sales tables from Bsale exports
+- Product enrichment by **SKU** (costs, categories, product type, etc.)
+- Key metrics:
   - Total sales
   - Total cost
   - Gross margin
   - Margin %
   - Units sold
-- Generate an Excel report including:
-  - Summary by **product type/category**
-  - Summary by **marketplace/channel** (if available)
-  - **Low-margin alerts** (e.g., margin < 20%)
+- Excel report outputs such as:
+  - Summary by product type/category
+  - Summary by marketplace/channel (if present in the data)
+  - Low-margin products list (e.g., margin < 20%)
   - Top / bottom products by units sold
 
----
 
-## Outputs
-
-Typical output is an Excel file containing:
-- Cleaned/standardized tables
-- Summary tables (pivot-like)
-- Low-margin lists
-- Product rankings
-
-> Tip: Add 2–3 screenshots of the final Excel report in `docs/img/` and embed them here to improve portfolio impact.
-
----
-
-## Repository structure
-
-Suggested layout (adapt t
