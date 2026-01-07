@@ -2,9 +2,6 @@
 
 Python pipeline to process **Bsale sales exports**, enrich them with product information (e.g., **SKU + cost**), compute key sales metrics (sales, cost, margin), and generate an **Excel report** with business-ready summaries.
 
-> Note: This repository is intended for a public portfolio. No personal identifiers (e.g., RUT, full names, emails, phone numbers) should be included in the data.
-
----
 
 ## What you get
 
