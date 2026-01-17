@@ -6,20 +6,12 @@ En el siguiente trabajo, se desarrollo 2 notebooks en python con el fin de autom
 
 <img width="1888" height="909" alt="image" src="https://github.com/user-attachments/assets/a0bad863-9468-4966-9825-342d7cc771e8" />
 
-## What you get
+## Librerias utilizadas
 
-- Cleaned and standardized sales tables from Bsale exports
-- Product enrichment by **SKU** (costs, categories, product type, etc.)
-- Key metrics:
-  - Total sales
-  - Total cost
-  - Gross margin
-  - Margin %
-  - Units sold
-- Excel report outputs such as:
-  - Summary by product type/category
-  - Summary by marketplace/channel (if present in the data)
-  - Low-margin products list (e.g., margin < 20%)
-  - Top / bottom products by units sold
+- Numpy
+- Pandas
+- Xlswriter
+- plotly
+
 
 
