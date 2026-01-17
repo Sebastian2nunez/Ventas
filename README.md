@@ -14,4 +14,6 @@ En el siguiente trabajo, se desarrollo 2 notebooks en python con el fin de autom
 - plotly
 
 
+## Contacto
 
+Sebastián Núñez — snunez445@gmail.com
