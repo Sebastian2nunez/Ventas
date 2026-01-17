@@ -1,7 +1,6 @@
-# Ventas (Bsale) — Sales ETL & Excel Reporting (Python)
+# Informe de ventas Via Uno — EDA, ETL, Automatización y Dashboard (Streamlit)
 
-Python pipeline to process **Bsale sales exports**, enrich them with product information (e.g., **SKU + cost**), compute key sales metrics (sales, cost, margin), and generate an **Excel report** with business-ready summaries.
-
+En el siguiente trabajo, se desarrollo 2 notebooks en python con el fin de automatizar trabajo repetitivo y largo. En el cual manualmente, el cierre de cada mes de ventas tardaba alrededor de 4 horas que podria destinarse para el analisis de estos mismos datos, solucionando esta problematica mediante python con un tiempo tomado de alrededor de 2 minutos (~ 98% mayor rapidez). Ademas, se desarrollo dashboards utilizando streamlit para la visualizacion de las ventas y ademas agrupandolo por Tipos de Productos y otros para el analisis exhaustivo para el periodo de tiempo deseado.
 
 ## What you get
 
